@@ -1,0 +1,44 @@
+{
+  "icons": [
+    {
+      "src": "/icon_512x512.c72a9cd914c84608acf76bcd3538bede.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_384x384.186244ebc025da7953c43dfc8c27389a.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_256x256.a1ca7aa65b294a3238050e0d3040a429.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_192x192.fdaaef026818fa447be25f07bb71d5ca.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_128x128.d2d01652314d56d54f1ffae052b2462e.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon_96x96.fb46e807e790a38a8d346ea40bdea1b9.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "Marginal notes",
+  "short_name": "Marginal notes",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "shortname": "Marginal notes",
+  "description": "Realiza tus anotaciones marginales",
+  "background_color": "#fff",
+  "theme_color": "#b1a",
+  "destination": "Icons"
+}
