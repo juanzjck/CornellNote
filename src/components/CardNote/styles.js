@@ -8,8 +8,24 @@ export const Wrapp=styled.div`
 `
 
 export const P=styled.p`
-
+    overflow: auto;
+    &.date{
+        margin:0px 10px 0px 10px;
+    }
 `
 export const Span=styled.span`
     font-weight:bold;
 `
+
+export const WrappDate=styled.div`
+  display:flex;
+  align-items:center;
+  margin:10px 0px 10px 0px;
+
+`
+export const WrappIcon=styled.div`
+    display: flex;
+    justify-content: flex-end;
+
+`
+

@@ -25,7 +25,7 @@ export const NavBar = () =>{
                                 Nueva nota
                             </LinkButton>
                             <LinkButton to='/'> 
-                                    <BsFillHouseDoorFill size={size}/>
+                                <BsFillHouseDoorFill size={size}/>
                                    Home
                             </LinkButton>
                         </WrappButtons>

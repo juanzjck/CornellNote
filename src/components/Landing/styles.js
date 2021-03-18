@@ -58,6 +58,9 @@ export const P=styled.p`
     &.sub_p{
         font-weight:bold;
     }
+    &.p_banner{
+        font-size:30px;
+    }
     margin:10px;
 `
 

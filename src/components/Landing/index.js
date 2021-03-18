@@ -9,23 +9,25 @@ export const Landing= () =>{
             <Banner>
                 <img src={logo}/>
                 <Title>V Prealfa</Title>
-                <P>
+                <P className="p_banner">
                     Crea notas de tus clases de forma sencilla usando la metodologia notas marginales y mantenlas siempre a mano en cualquier dispositivo
                 </P>
                 <WrappButtons>
                     <Button  className='blue' to='/newNote'>Nueva nota</Button>
                     <Button to='/notes' >Mis notas</Button>
                 </WrappButtons>
-                
             </Banner>
             <WrappSection className='note_background'>
                 <WrappSectionContent className='box_background'>
                     <h2>¿Qué es Margin Note?</h2>
                     <P>
-                        Es una plataforma de codigo abierto, creada para que puedas crear notas con la metodologia notas marginales, es una tecnica muy util para tomar apuntes de tus clases o talleres.
+                       Es una metodologia de apuntes simple y elegante, dividiento en 4 partes nuestras notas un titulo, una descripcion, palabras clave y un resumen.
+                       Usualmente el resumen se lo debe hacer un dia despues de haber resivido la clase, taller o mentoria; permitiendo asentar los conocimientos adquiridos.
                     </P>
                     <P>
-                        Sabesmo que siempre necesitas tener tus notas a mano, por lo que esta plataforma es una progresive web app, la cual puedes instalar en tus dispositivos
+                        Es una metodología de apuntes simple y elegante, dividiendo en 4 partes nuestras notas un título, una descripción, palabras clave y un resumen. Usualmente el resumen se lo debe hacer un día después de haber recibido la clase, taller o mentoría; permitiendo asentar los conocimientos adquiridos.
+                        Esta metodología es genial pero escribirlas en un drive o en una hoja puede no ser la mejor opción, piénsalo, cuando lo haces de esa forma lo más probable es que se te olvide hacer el resumen, eso me pasa a mi. Para eso creamos Margin Note, para que tengas tus notas a mano en un solo lugar, pero sobre todo que puedas ser más disciplinado. Margin Note provee una plataforma que te notificara para que refuerces tus conocimientos.
+
                     </P>
                 </WrappSectionContent>
             </WrappSection>
