@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from '@reach/router'
 export const Wrapp=styled.div`
     min-height:100px;
     background:white;
@@ -26,6 +26,10 @@ export const WrappDate=styled.div`
 export const WrappIcon=styled.div`
     display: flex;
     justify-content: flex-end;
+`
 
+export const LinkWrapp=styled(Link)`
+    color:black;
+    text-decoration:none;
 `
 

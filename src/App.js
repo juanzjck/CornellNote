@@ -4,18 +4,19 @@ import { GlobalStyle } from './styles/GlobalStyles'
 import {Home} from './pages/Home'
 import {Notes} from './pages/Notes'
 import {Redirect, Router} from '@reach/router'
+import { LayoutPage } from './components/LayoutPage'
 
 export const App = () =>{
     return(
         <Fragment>
             <GlobalStyle/>
-            <Router>
-                <Home default path="/"/>
-                <NewNote path="/newNote" />
-                <Notes path="/notes"/>
-            </Router>
-   
-          
+            <LayoutPage>
+                <Router>
+                    <Home default path="/"/>
+                    <NewNote path="/newNote" />
+                    <Notes path="/notes"/>
+                </Router>
+            </LayoutPage>
         </Fragment>   
     )
 }

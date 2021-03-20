@@ -35,10 +35,10 @@ export const NavBarNote = () =>{
                                     <BsCloudDownload size={size}/>
                                     Descargar nota
                                 </LinkButton>
-                                <ItemNav >
+                                <LinkButton  to='/notes' >
                                     <BsCloudFill size={size}/>
                                     Capetas de notas
-                                </ItemNav>
+                                </LinkButton>
                         </WrappButtons>
                         <WrappButtons>
                                <LinkButton to='/'> 
