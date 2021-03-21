@@ -1,0 +1,122 @@
+"""MODELS"""
+directive @auth on FIELD_DEFINITION | FIELD
+type User {
+    _id:ID
+    first_name:String!
+    last_name:String!
+    Nick_name:String!
+    ocupation:Ocupation
+    birthDate:String
+    gender:Gender
+    email:String!
+    password:String!
+    type_user:TypesUser
+    is_active:Boolean
+    contract_acepted:Boolean
+    country:String!
+}
+
+type Note {
+    _id:ID
+    title:String!,
+    description:String,
+    keyword:String,
+    summary:String
+    is_public:Boolean
+    user:User!
+}
+
+type Category {
+    _id:ID
+    title:String!,
+    description:String,
+    is_public:String!
+    notes:[Note]
+    user:User!
+}
+
+type Auth{
+    token: String!
+    message: String!
+}
+
+
+"""ENUMS"""
+
+enum TypesUser {
+    Student
+    Teacher
+    Profesional
+    Coder
+    Other
+}
+
+enum  Gender {
+    M
+    F
+    NO BINARIO
+}
+
+enum  Ocupation {
+   Student
+   Teacher
+   Profesional
+   Coder
+   Other
+}
+
+"""MUTATION"""
+type Mutation {
+    createNote(input:NoteInput):Note @auth
+    createCategory(input:CategoryInput):Category @auth
+    createUser(input:UserInput):User 
+    updateNote(id:ID!,input:NoteInput):Note @auth
+    updateCategory(id:ID!,input:CategoryInput):Category @auth
+    updateUser(id:ID!,input:UserInput):User @auth
+    deleteNote(id:ID!,input:NoteInput):String @auth
+    deleteCategory(id:ID!):String @auth
+    deleteUser(id:ID!,input:UserInput):User @auth
+    login(email:String!, password: String!):Auth! 
+    attachNoteToCategory(categoryId:ID!,nodeId:ID!):String @auth
+}
+
+"""QUERY"""
+type Query {
+    getUser:User! @auth
+    getCategories:[Category]! @auth
+    getNotes:[Note]! @auth
+    getNoteInfo(id:ID!):Note! @auth
+    getCategoryInfo(id:ID!):Category! @auth
+}
+
+
+"""INPUTS"""
+input NoteInput {
+    title:String!,
+    description:String,
+    keyword:String,
+    summary:String
+    is_public:Boolean
+}
+
+input CategoryInput {
+    title:String!,
+    description:String,
+    is_public:String
+    notes:[ID]
+}
+
+input UserInput {
+    first_name:String!
+    last_name:String!
+    Nick_name:String!
+    ocupation:Ocupation
+    birthDate:String
+    gender:Gender
+    email:String!
+    password:String!
+    type_user:TypesUser
+    is_active:Boolean
+    contract_acepted:Boolean
+    country:String!
+}
