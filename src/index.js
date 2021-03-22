@@ -16,7 +16,7 @@ const client = new ApolloClient({
         })
     },
     onError:error =>{
-        alert(error.response)
+        console.log(error)
         const {errors}=error.response
         if(errors){
             window.sessionStorage.removeItem('token')

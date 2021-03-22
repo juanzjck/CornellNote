@@ -69,7 +69,7 @@ enum  Ocupation {
 type Mutation {
     createNote(input:NoteInput):Note @auth
     createCategory(input:CategoryInput):Category @auth
-    createUser(input:UserInput):User 
+    createUser(input:UserInput):String
     updateNote(id:ID!,input:NoteInput):Note @auth
     updateCategory(id:ID!,input:CategoryInput):Category @auth
     updateUser(id:ID!,input:UserInput):User @auth

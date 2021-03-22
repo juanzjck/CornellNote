@@ -3,8 +3,8 @@ const {authenticate,authenticateRegister} = require('../../utils/authenticate');
 const createUser = async (_,{input}) =>{
     //create Note
    const user = await UserServices.createOneUser(input)
-
-   return user
+    if(!user)throw new Error('This is not your profile')
+   return '200'
 }
 
 const  updateUser = async (_,{id,input},{ userAuth }) =>{
