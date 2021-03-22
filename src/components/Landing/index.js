@@ -1,9 +1,12 @@
-import React from 'react'
+import React, {Fragment, useContext} from 'react'
 import {P,Title,WrappSectionContent,WrappIcones,LandingHeader,IconImg,WrappSection,Banner,Button,WrappButtons} from './styles'
 import logo from '../../assets/icon.png'
 import btcIcon from '../../assets/btc.png'
 import paypalIcon from '../../assets/paypal.png'
+import {Context} from '../../context'
+
 export const Landing= () =>{
+    const {IsSignIn}=useContext(Context)
     return(
         <LandingHeader>
             <Banner>
@@ -13,8 +16,18 @@ export const Landing= () =>{
                     Crea notas de tus clases de forma sencilla usando la metodologia notas marginales y mantenlas siempre a mano en cualquier dispositivo
                 </P>
                 <WrappButtons>
-                    <Button  className='blue' to='/newNote'>Nueva nota</Button>
-                    <Button to='/notes' >Mis notas</Button>
+                    {IsSignIn?
+                    <Fragment>
+                        <Button  className='blue' to='/newNote'>Nueva nota</Button>
+                        <Button to='/notes' >Mis notas</Button>
+                    </Fragment>
+                    :
+                    <Fragment>
+                        <Button  className='blue' to='/register'>Crea una cuenta</Button>
+                        <Button  to='/login' >Inicia sesión</Button>
+                    </Fragment>
+                    }
+                   
                 </WrappButtons>
             </Banner>
             <WrappSection className='note_background'>
@@ -45,7 +58,7 @@ export const Landing= () =>{
                 </WrappIcones>
                
             </WrappSection>
-            <WrappSection className='blue_background'>
+            <WrappSection className='colored_background'>
                 <WrappSectionContent >
                     <h2>¿Quieres ayudarnos de otra manera?</h2>
                     <P>

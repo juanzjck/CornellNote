@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-export const UseValue = initialValue =>{
+export const useValue = initialValue =>{
     const [value,setValue]=useState(initialValue)
     const onChange= e =>{
         if(typeof e === 'object'){

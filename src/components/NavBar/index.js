@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react'
 import {LinkButton,WrappDisclamer,WrappButtonOpenNav,WrappButtons,ItemNav,NavNote,ButtonOpenNav} from './styles'
-import {UseValue} from '../../hook/UseValue'
+import {useValue} from '../../hook/useValue'
 import {BsFillHouseDoorFill,BsCloudFill,BsFillGrid3X3GapFill,BsCloudDownload,BsFillPlusSquareFill,BsFillFolderFill,BsFillDashCircleFill} from 'react-icons/bs'
 export const NavBar = () =>{
-    const IsShow=UseValue(false);
+    const IsShow=useValue(false);
     const size=30;
     return(
         <Fragment>

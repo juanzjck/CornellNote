@@ -1,10 +1,27 @@
-import styled  from 'styled-components'
+import styled,{css,keyframes}  from 'styled-components'
 import {Link} from '@reach/router'
 import background_note from '../../assets/note_background.jpg'
 export const LandingHeader=styled.div`
     width:100%;
     height:100vh;
-    background-image:linear-gradient(178deg, #1e49cb, #0c9ad38f);
+    background-image:linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+    animation:1s ${particles};
+   /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 400% 400%;
+`
+const particles = keyframes`
+    0% {
+       opacity:0;
+    }
+    50% {
+        opacity:.5;
+    }
+    100% {
+       opacity:1;
+    }
 `
 
 export const Banner=styled.div`
@@ -71,8 +88,14 @@ export const WrappSection=styled.div`
     text-align:center;
     flex-direction:column;
     padding:20px;
-    &.blue_background{
-        background-image: linear-gradient(178deg,#1e49cb,#0c9ad38f);
+    &.colored_background{
+        background-image:linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+        animation:1s ${particles};
+        background-size: 400% 400%;
+    /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
         color:white;
     }
     &.note_background{

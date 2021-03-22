@@ -4,7 +4,7 @@ type User {
     _id:ID
     first_name:String!
     last_name:String!
-    Nick_name:String!
+    Nick_name:String
     ocupation:Ocupation
     birthDate:String
     gender:Gender
@@ -109,7 +109,7 @@ input CategoryInput {
 input UserInput {
     first_name:String!
     last_name:String!
-    Nick_name:String!
+    Nick_name:String
     ocupation:Ocupation
     birthDate:String
     gender:Gender
