@@ -1,7 +1,8 @@
 const  {NoteServices} = require('../../services')
 
 const getNoteInfo = async (_,{id},{ userAuth }) =>{
-    const note = await NoteServices.getOneNoteById(id)
+    const note =await  NoteServices.getOneNoteById(id, userAuth)
+    console.log(note)
     if(!note) throw new Error('There are not note whit that id')
     if(note.user===userAuth._id)throw new Error('This is not your note')
     return note

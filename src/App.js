@@ -8,6 +8,7 @@ import { LayoutPage } from './components/LayoutPage'
 import {Context} from './context'
 import {Login} from './pages/Login'
 import {Register} from './pages/Register'
+import { NoteEdit} from './pages/Note'
 export const App = () =>{
     const {IsSignIn}=useContext(Context)
     return(
@@ -16,12 +17,14 @@ export const App = () =>{
             <LayoutPage>
                 <Router>
                     <Home default path="/"/>
-                    {!IsSignIn&&<Register path="/register"/>}
                     {!IsSignIn&&<Login path="/login"/>}
+                    {!IsSignIn&&<Register path="/register"/>}
+                    
                     {!IsSignIn&&<Redirect from="/newNote" to="/register"/>}
                     {!IsSignIn&&<Redirect from="/notes" to="/register"/>}
                     {IsSignIn&&<Redirect from='/login' to='/'/>}
                     {IsSignIn&&<Redirect from='/register' to='/'/>}
+                    {IsSignIn&&<NoteEdit path='/note/:id'/>}
                     <NewNote path="/newNote" />
                     <Notes path="/notes"/>
                 </Router>

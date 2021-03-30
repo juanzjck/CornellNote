@@ -4,9 +4,9 @@ const getAllNotes = () => Note.find();
 
 const getAllNotesByUserId = (id) => Note.find({user:id}); 
 
-const getOneNoteById = (id,userAuth) => Note.findById(id).then((note)=>{
+const getOneNoteById = async (id,userAuth) =>await Note.findById(id).then((note)=>{
     if(!(`${note.user}`==`${userAuth._id}`))return null
-    return Note.findById({ _id: id, });
+    return note
 }) 
 
 

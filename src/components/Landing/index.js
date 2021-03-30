@@ -1,10 +1,10 @@
 import React, {Fragment, useContext} from 'react'
-import {P,Title,WrappSectionContent,WrappIcones,LandingHeader,IconImg,WrappSection,Banner,Button,WrappButtons} from './styles'
+import {P,Pli,Li,Ul,TimeLineItemContent,DivContainerTimeLine,DivTimeLine,Title,WrappSectionContent,WrappIcones,LandingHeader,IconImg,WrappSection,Banner,Button,WrappButtons} from './styles'
 import logo from '../../assets/icon.png'
 import btcIcon from '../../assets/btc.png'
 import paypalIcon from '../../assets/paypal.png'
 import {Context} from '../../context'
-
+import { BsCheckCircle } from "react-icons/bs";
 export const Landing= () =>{
     const {IsSignIn}=useContext(Context)
     return(
@@ -13,7 +13,7 @@ export const Landing= () =>{
                 <img src={logo}/>
                 <Title>V Prealfa</Title>
                 <P className="p_banner">
-                    Crea notas de tus clases de forma sencilla usando la metodologia notas marginales y mantenlas siempre a mano en cualquier dispositivo
+                   Usa la metodologia cornell para tomar notas de tus clases o cursos, resive recardatorios de estudio y monitorea tu avance
                 </P>
                 <WrappButtons>
                     {IsSignIn?
@@ -32,33 +32,121 @@ export const Landing= () =>{
             </Banner>
             <WrappSection className='note_background'>
                 <WrappSectionContent className='box_background'>
-                    <h2>¿Qué es Margin Note?</h2>
+                    <h2>¿Qué son las notas cornell?</h2>
                     <P>
-                       Es una metodologia de apuntes simple y elegante, dividiento en 4 partes nuestras notas un titulo, una descripcion, palabras clave y un resumen.
-                       Usualmente el resumen se lo debe hacer un dia despues de haber resivido la clase, taller o mentoria; permitiendo asentar los conocimientos adquiridos.
+                       Es una metodologia de anotacion, en la que se divide los apuntes que hacemos en 4 partes, un titulo, una  descricion, palabras clave o preguntas y un resumen.
+                        Péro no solo se queda ahí, el cerebro aprende a través de la repetición espaciada por lo que la seccion de resumen se la deja vacia para luego de un tiempo, raelizar un resumen con lo que nos acordamos. 
+                        De esta forma el cerebro crea las conexiones para que lo que aprendas se queda en el pasar del tiempo.  
                     </P>
                     <P>
-                        Es una metodología de apuntes simple y elegante, dividiendo en 4 partes nuestras notas un título, una descripción, palabras clave y un resumen. Usualmente el resumen se lo debe hacer un día después de haber recibido la clase, taller o mentoría; permitiendo asentar los conocimientos adquiridos.
-                        Esta metodología es genial pero escribirlas en un drive o en una hoja puede no ser la mejor opción, piénsalo, cuando lo haces de esa forma lo más probable es que se te olvide hacer el resumen, eso me pasa a mi. Para eso creamos Margin Note, para que tengas tus notas a mano en un solo lugar, pero sobre todo que puedas ser más disciplinado. Margin Note provee una plataforma que te notificara para que refuerces tus conocimientos.
+                      Si quieres saber más sobre esta metodologia puedes revisar el siguiente link:
 
                     </P>
+                    <a href='https://es.wikipedia.org/wiki/Notas_Cornell' target='blank'> 
+                        Quiero saber más...
+                    </a>
                 </WrappSectionContent>
             </WrappSection>
             <WrappSection>
           
                 <WrappSectionContent>
-                    <h2>Apoyanos!!!</h2>
-                    <P>
-                        Esta plataforma es completamente gratis, y estamos felices de mantenerla, pero implica algo de tiempo asi que estariamos felices si nos apoyas, puedes apoyarnos usando  PayPal
-                    </P>
+                    <h2>¿Por que somos la mejor opcion?</h2>
+                    <br/>
+                    <Ul>
+                        <Li>
+                          <BsCheckCircle size={25}/>
+                            <Pli>
+                            Esta plataforma es completamente gratis 
+                            </Pli>
+                           
+                        </Li>
+                        <Li>
+                            <BsCheckCircle size={25}/>
+                            <Pli>
+                                Tus datos y notas no son compartidas con otras empresas
+                            </Pli>
+                          
+                        </Li>
+                        <Li>
+                            <BsCheckCircle size={25}/>
+                            <Pli>
+                            Puedas crear notas sin limite 
+                            </Pli>
+                            
+                        </Li>
+                        <Li>
+                           <BsCheckCircle size={25}/>
+                            <Pli>
+                            Resive notificaciones de recordatorio de estudio
+                            </Pli>
+                            
+                        </Li>
+                        <Li>
+                           <BsCheckCircle size={25}/>
+                            <Pli>
+                            Configura el tiempo de espaciado para el repaso de tus notas
+                            </Pli>
+                            
+                        </Li>
+                        <Li>
+                           <BsCheckCircle size={25}/>
+                            <Pli>
+                            Has un seguimientos de tus avances 
+                            </Pli>
+                        </Li>
+                        <Li>
+                             <BsCheckCircle size={25}/>
+                            <Pli>
+                            Usalo en cualquier plataforma
+                            </Pli>
+                            
+                        </Li>
+                    </Ul>
+                   
+                  
                 </WrappSectionContent>
-                <WrappIcones>
-                    <IconImg className='paypal'  src={paypalIcon}/>
-                 
-                </WrappIcones>
                
             </WrappSection>
             <WrappSection className='colored_background'>
+                 <h2>¿Como usar las notas cornell?</h2>
+                 <br/>       
+                <DivTimeLine>
+                    <DivContainerTimeLine  className='left'>
+                        <TimeLineItemContent>
+                            <h2>Paso 1</h2>
+                            <p>Escribe un titulo con el tema de tu clase, en la parte de descripción ingresa informacion de tu clase, en la parte de preguntas agrega preguntas o palabras que consideres importantes para investigar</p>
+                        </TimeLineItemContent>
+                    </DivContainerTimeLine>
+                    <DivContainerTimeLine  className='right'>
+                        <TimeLineItemContent>
+                            <h2>Paso 2</h2>
+                            <p>Confirura la frecuencia del recordatorio para crear el resumen de la nota y revisar lo anotado, te recomendamos 1 día.</p>
+                        </TimeLineItemContent>
+                    </DivContainerTimeLine>
+                    <DivContainerTimeLine  className='left'>
+                        <TimeLineItemContent>
+                            <h2>Paso 3</h2>
+                            <p>El app ne notificara segun la tu configuracion, recibiras un push notification, cuando pase es momento de hacer el resumen.</p>
+                        </TimeLineItemContent>
+                    </DivContainerTimeLine>
+                    <DivContainerTimeLine  className='right'>
+                        <TimeLineItemContent>
+                            <h2>Paso 4</h2>
+                            <p>Al terminar el resumen, abras reforsado lo aprendido en clases y podras ver tus avances en el dashboard.</p>
+                        </TimeLineItemContent>
+                    </DivContainerTimeLine>
+                    
+                </DivTimeLine>
+            </WrappSection>
+            <WrappSection>
+                <span>Todos los derechos reservados por ®Margin Note </span>
+            </WrappSection>
+        </LandingHeader>
+    )
+}
+
+/*
+ <WrappSection className='colored_background'>
                 <WrappSectionContent >
                     <h2>¿Quieres ayudarnos de otra manera?</h2>
                     <P>
@@ -129,10 +217,4 @@ export const Landing= () =>{
                     </ul>
                   
                 </WrappSectionContent>
-            </WrappSection>
-            <WrappSection>
-                <span>Todos los derechos reservados por ®Margin Note </span>
-            </WrappSection>
-        </LandingHeader>
-    )
-}
+            </WrappSection> */

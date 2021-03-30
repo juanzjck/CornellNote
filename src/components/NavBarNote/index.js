@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import {LinkButton,WrappDisclamer,WrappButtonOpenNav,WrappButtons,ItemNav,NavNote,ButtonOpenNav} from './styles'
 import {useValue} from '../../hook/useValue'
 import {BsFillHouseDoorFill,BsCloudFill,BsFillGrid3X3GapFill,BsCloudDownload,BsFillPlusSquareFill,BsFillFolderFill,BsFillDashCircleFill} from 'react-icons/bs'
-export const NavBarNote = () =>{
+export const NavBarNote = ({onSubmit}) =>{
     const IsShow=useValue(false);
     const size=30;
     return(
@@ -24,7 +24,7 @@ export const NavBarNote = () =>{
                                 <BsFillPlusSquareFill size={size}/>
                                 Nueva nota
                             </LinkButton>
-                            <ItemNav >
+                            <ItemNav onClick={(e)=>onSubmit(e)} >
                                 <BsFillFolderFill size={size}/>
                                 Guardar cambios
                             </ItemNav>
