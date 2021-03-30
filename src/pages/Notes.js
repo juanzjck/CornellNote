@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { ListOfNotes } from '../components/ListOfNotes'
 import { NavBar } from '../components/NavBar'
 import {Dashboard} from '../components/DashBoard'
+import { ListNoteContainer } from '../containers/ListNoteContainer'
 
 export const Notes= () =>{
     return(
@@ -10,7 +11,13 @@ export const Notes= () =>{
             <br></br>
             <Dashboard />
             <br></br>
-             <ListOfNotes />
+            <ListNoteContainer>
+                {({data,loading, error})=>{
+                    if(loading) return<h1>Loading...</h1>
+                    return <ListOfNotes data={data.getNotes}/>
+                }}
+            </ListNoteContainer>
+             
         </Fragment>
        
     )

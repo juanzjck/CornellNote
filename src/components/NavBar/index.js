@@ -5,6 +5,13 @@ import {BsFillHouseDoorFill,BsCloudFill,BsFillGrid3X3GapFill,BsCloudDownload,BsF
 export const NavBar = () =>{
     const IsShow=useValue(false);
     const size=30;
+    const handlerNewNote = () =>{
+        title.setLocalStorage('')
+        dedscription.setLocalStorage('')
+        keyWords.setLocalStorage('')
+        summary.setLocalStorage('')
+        window.location.href='/newNote'
+    }
     return(
         <Fragment>
             {!IsShow.value?
@@ -20,7 +27,7 @@ export const NavBar = () =>{
                         </WrappButtonOpenNav>
                  
                         <WrappButtons>
-                            <LinkButton to='/newNote' >
+                            <LinkButton onClick={()=>handlerNewNote()} to='/newNote' >
                                 <BsFillPlusSquareFill size={size}/>
                                 Nueva nota
                             </LinkButton>

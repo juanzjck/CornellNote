@@ -1,24 +1,20 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import {InputSummary,WrapBody,WrapDescripcion,InputTitle,InputDescription,InputKeyWords} from './styles'
 import {useLocalStorage} from '../../hook/useLocalStorage'
 import { NavBarNote } from '../NavBarNote'
 
 export const Note = ({onSubmit}) =>{
-    const title=useLocalStorage('title','')
-    const keyWords=useLocalStorage('keyword','')
-    const dedscription=useLocalStorage('description','')
-    const summary=useLocalStorage('summary','')
+    let title=useLocalStorage('title','')
+    let keyWords=useLocalStorage('keyword','')
+    let dedscription=useLocalStorage('description','')
+    let summary=useLocalStorage('summary','')
     const handleSubmit=(e)=>{
         e.preventDefault();
         onSubmit({
-            variables:{
-                input:{
-                    title: `${title.storeValue}`,
-                    description: `${dedscription.storeValue}`,
-                    keyword: `${keyWords.storeValue}`,
-                    summary: `${summary.storeValue}`
-                }
-            }
+            title: `${title.storeValue}`,
+            description: `${dedscription.storeValue}`,
+            keyword: `${keyWords.storeValue}`,
+            summary: `${summary.storeValue}`
         });
     }
     return(

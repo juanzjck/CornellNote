@@ -2,7 +2,10 @@ const Note = require('../models/Note');
 
 const getAllNotes = () => Note.find(); 
 
-const getAllNotesByUserId = (id) => Note.find({user:id}); 
+const getAllNotesByUserId = (id) => Note.find({user:id}).then(notes=>{
+    
+    return notes
+}); 
 
 const getOneNoteById = async (id,userAuth) =>await Note.findById(id).then((note)=>{
     if(!(`${note.user}`==`${userAuth._id}`))return null

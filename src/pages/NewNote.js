@@ -4,6 +4,13 @@ import { NewNoteContainer } from '../containers/NewNoteContainer'
 
 
 export const NewNote= () =>{
+    const handleSubmit=(onSubmit,input)=>{ 
+        onSubmit({
+            variables:{
+                input
+            }
+        });
+    }
     return(
         <NewNoteContainer>
             {
@@ -14,7 +21,7 @@ export const NewNote= () =>{
                        }
                     }
                     return(
-                        <Note onSubmit={mutation}></Note>
+                        <Note onSubmit={(e)=>handleSubmit(mutation,e)}></Note>
                     )
                 }
             }

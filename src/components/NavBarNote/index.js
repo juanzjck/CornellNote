@@ -1,10 +1,22 @@
 import React, { Fragment } from 'react'
 import {LinkButton,WrappDisclamer,WrappButtonOpenNav,WrappButtons,ItemNav,NavNote,ButtonOpenNav} from './styles'
 import {useValue} from '../../hook/useValue'
+import {useLocalStorage} from '../../hook/useLocalStorage'
 import {BsFillHouseDoorFill,BsCloudFill,BsFillGrid3X3GapFill,BsCloudDownload,BsFillPlusSquareFill,BsFillFolderFill,BsFillDashCircleFill} from 'react-icons/bs'
 export const NavBarNote = ({onSubmit}) =>{
+    const title=useLocalStorage('title','')
+    const keyWords=useLocalStorage('keyword','')
+    const dedscription=useLocalStorage('description','')
+    const summary=useLocalStorage('summary','')
     const IsShow=useValue(false);
     const size=30;
+    const handlerNewNote = () =>{
+        title.setLocalStorage('')
+        dedscription.setLocalStorage('')
+        keyWords.setLocalStorage('')
+        summary.setLocalStorage('')
+        window.location.href='/newNote'
+    }
     return(
         <Fragment>
             {!IsShow.value?
@@ -20,7 +32,7 @@ export const NavBarNote = ({onSubmit}) =>{
                         </WrappButtonOpenNav>
                  
                         <WrappButtons>
-                            <LinkButton onClick={()=>console.log('e')} to='/newNote'> 
+                            <LinkButton onClick={()=>handlerNewNote()} to='/newNote'> 
                                 <BsFillPlusSquareFill size={size}/>
                                 Nueva nota
                             </LinkButton>

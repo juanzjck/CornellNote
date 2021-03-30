@@ -24,6 +24,8 @@ type Note {
     summary:String
     is_public:Boolean
     user:User!
+    createdAt:String
+    updatedAt:String
 }
 
 type Category {
