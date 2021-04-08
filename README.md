@@ -15,4 +15,10 @@
   <li>React Helmate</li>
 </ul>
 
-<h2>Start</h2>
+<h2>Get start</h2>
+
+<ul>
+  <li>Clone this repository</li>
+   <li>npm i </li>
+  <li>npm run dev</li>
+</ul>
